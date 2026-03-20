@@ -47,7 +47,11 @@ builder.Services.AddControllers();
 // CORS - allow Vite dev server
 builder.Services.AddCors(opt =>
     opt.AddPolicy("DevCors", p => p
-        .WithOrigins("http://localhost:5173", "http://frontend:5173")
+        .WithOrigins(
+            "http://localhost:5173",
+            "http://frontend:5173",
+            "https://frontend-production-c9dd.up.railway.app"
+        )
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowCredentials()));
